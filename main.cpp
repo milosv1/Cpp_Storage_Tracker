@@ -6,6 +6,7 @@
 //we need to translate it to C++
 
 #define UNLEN 256
+#define UNCLEN 256
 
 void get_username()
 {
@@ -13,8 +14,17 @@ void get_username()
     DWORD user_len = UNLEN+1;
 
     GetUserName((TCHAR*)user, &user_len);
-    std::cout<< user << "\n";
+    std::cout << "User: " << user << "\n";
 
+}
+
+void get_compname()
+{
+    TCHAR comp[UNCLEN+1];
+    DWORD comp_len = UNCLEN+1;
+
+    GetComputerName((TCHAR*)comp, &comp_len);
+    std::cout << "Machine Name: " << comp << "\n";
 }
 
 void last_accesed()
@@ -50,6 +60,7 @@ void get_version()
 int main()
 {   
     get_username();
+    get_compname();
     last_accesed();
     get_version();
 
