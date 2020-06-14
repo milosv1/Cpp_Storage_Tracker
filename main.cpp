@@ -21,7 +21,7 @@ void last_accesed()
 {
     SYSTEMTIME lt; //Get local time
 
-    GetSystemTime( &lt );
+    GetSystemTime(&lt);
     //show last accessed time Hr:Min:sec
     std::cout << "Last Accessed: " << lt.wHour << ":" << lt.wMinute << ":" << lt.wSecond <<"\n";
 }
@@ -36,17 +36,16 @@ void get_version()
     dwVersion = GetVersion();
     
     //get windows version
-    dwMajorVersion = ( DWORD )( LOBYTE ( LOWORD ( dwVersion )));
-    dwMinorVersion = ( DWORD )( HIBYTE ( LOWORD ( dwVersion )));
+    dwMajorVersion = (DWORD)(LOBYTE(LOWORD(dwVersion)));
+    dwMinorVersion = (DWORD)(HIBYTE(LOWORD(dwVersion)));
 
     //get build number
-    if ( dwVersion < 0x80000000 )
-        dwBuild = ( DWORD )( HIWORD ( dwVersion ));
+    if (dwVersion < 0x80000000)
+        dwBuild = (DWORD)(HIWORD(dwVersion));
 
     //printf("Version is %d.%d %d\n",dwMajorVersion, dwMinorVersion, dwBuild);    
      std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild ;
 }
-
 
 int main()
 {   
