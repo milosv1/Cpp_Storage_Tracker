@@ -4,7 +4,12 @@
 //the objective of this project is to recreate the Python Storage Tracker created very recently.
 //we need to translate it to C++
 
-void lastAccesed()
+void get_username()
+{
+
+}
+
+void last_accesed()
 {
     SYSTEMTIME lt;
 
@@ -13,7 +18,7 @@ void lastAccesed()
     std::cout << "Last Accessed: " << lt.wHour << ":" << lt.wMinute << ":" << lt.wSecond <<"\n";
 }
 
-void getVersion()
+void get_version()
 {
     DWORD dwVersion = 0;
     DWORD dwMajorVersion = 0;
@@ -37,7 +42,7 @@ void getVersion()
 
 int main()
 {   
-    lastAccesed();
-    getVersion();
+    last_accesed();
+    get_version();
 
 }
