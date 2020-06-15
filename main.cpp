@@ -14,6 +14,8 @@ void get_username()
     DWORD user_len = UNLEN+1;
 
     GetUserName((TCHAR*)user, &user_len);
+    printf("Hey there %s! \n", user);
+    std::cout << "Here is some information on your system \n";
     std::cout << "User: " << user << "\n";
 
 }
