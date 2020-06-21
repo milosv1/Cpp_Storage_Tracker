@@ -2,6 +2,8 @@
 #include<Windows.h>
 #include<stdio.h>
 #include<tchar.h>
+#include<ctime>
+
 //the objective of this project is to recreate the Python Storage Tracker created very recently.
 //we need to translate it to C++
 
@@ -14,8 +16,6 @@ void get_username()
     DWORD user_len = UNLEN+1;
 
     GetUserName((TCHAR*)user, &user_len);
-    printf("Hey there %s! \n", user);
-    std::cout << "Here is some information on your system \n";
     std::cout << "User: " << user << "\n";
 
 }
@@ -31,12 +31,17 @@ void get_compname()
 
 void last_accesed()
 {
-    //SYSTEMTIME lt; //Get local time
+    /*
+     SYSTEMTIME lt,wMonth,wDay; //Get local time
+     GetSystemTime(&lt);
+    // show last accessed time Hr:Min:sec
+     std::cout << "Last accessed on the " << lt.wMonth <<':' << lt.wDay << "--" << lt.wHour << ":" << lt.wMinute << ":" << lt.wSecond <<"\n";
+    */
+    time_t now = time(0);
+    //convert now to string format
+    char* dt = ctime(&now);
+    std::cout <<"last accessed on: " << dt;
 
-    //GetSystemTime(&lt);
-   // show last accessed time Hr:Min:sec
-    //std::cout << "Last Accessed: " << lt.wHour << ":" << lt.wMinute << ":" << lt.wSecond <<"\n";
-      std::cout << "Last Accesed: " << __TIMESTAMP__ << '\n'; 
 }
 
 void get_version()
