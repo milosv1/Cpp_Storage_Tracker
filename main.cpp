@@ -31,11 +31,12 @@ void get_compname()
 
 void last_accesed()
 {
-    SYSTEMTIME lt; //Get local time
+    //SYSTEMTIME lt; //Get local time
 
-    GetSystemTime(&lt);
-    //show last accessed time Hr:Min:sec
-    std::cout << "Last Accessed: " << lt.wHour << ":" << lt.wMinute << ":" << lt.wSecond <<"\n";
+    //GetSystemTime(&lt);
+   // show last accessed time Hr:Min:sec
+    //std::cout << "Last Accessed: " << lt.wHour << ":" << lt.wMinute << ":" << lt.wSecond <<"\n";
+      std::cout << "Last Accesed: " << __TIMESTAMP__ << '\n'; 
 }
 
 void get_version()
@@ -65,5 +66,5 @@ int main()
     get_compname();
     last_accesed();
     get_version();
-
+   
 }
