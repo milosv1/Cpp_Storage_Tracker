@@ -34,7 +34,7 @@ void last_accesed()
 {
     time_t now = time(0);
     char* dt = ctime(&now);
-    std::cout <<"last accessed on: " << dt;
+    std::cout <<"last login: " << dt;
 }
 
 //Prints version.
