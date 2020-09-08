@@ -8,6 +8,7 @@
 #define UNLEN 256
 #define UNCLEN 256
 
+//Prints current user.
 void get_username()
 {
     TCHAR user[UNLEN+1];
@@ -18,6 +19,7 @@ void get_username()
 
 }
 
+//Prints Machine Name.
 void get_compname()
 {
     TCHAR comp[UNCLEN+1];
@@ -27,21 +29,15 @@ void get_compname()
     std::cout << "Machine Name: " << comp << "\n";
 }
 
+//Prints: last accessed on: Day/time/Year.
 void last_accesed()
 {
-    /*
-     SYSTEMTIME lt,wMonth,wDay; //Get local time
-     GetSystemTime(&lt);
-    // show last accessed time Hr:Min:sec
-     std::cout << "Last accessed on the " << lt.wMonth <<':' << lt.wDay << "--" << lt.wHour << ":" << lt.wMinute << ":" << lt.wSecond <<"\n";
-    */
     time_t now = time(0);
-    //convert now to string format
     char* dt = ctime(&now);
     std::cout <<"last accessed on: " << dt;
-
 }
 
+//Prints version.
 void get_version()
 {
     DWORD dwVersion = 0;
