@@ -47,11 +47,11 @@ void get_version()
     
     dwVersion = GetVersion();
     
-    //get windows version
+    
     dwMajorVersion = (DWORD)(LOBYTE(LOWORD(dwVersion)));
     dwMinorVersion = (DWORD)(HIBYTE(LOWORD(dwVersion)));
 
-    //get build number
+    
     if (dwVersion < 0x80000000)
         dwBuild = (DWORD)(HIWORD(dwVersion));
 
