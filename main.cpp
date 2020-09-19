@@ -58,6 +58,11 @@ void get_version()
     //printf("Version is %d.%d %d\n",dwMajorVersion, dwMinorVersion, dwBuild);    
      std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild ;
 }
+//get remaining, used, capacity - below. (space)
+void get_storage()
+{
+
+}
 
 int main()
 {   
@@ -65,5 +70,5 @@ int main()
     get_compname();
     last_accesed();
     get_version();
-   
+    get_storage();
 }
