@@ -56,12 +56,12 @@ void get_version()
         dwBuild = (DWORD)(HIWORD(dwVersion));
 
     //printf("Version is %d.%d %d\n",dwMajorVersion, dwMinorVersion, dwBuild);    
-     std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild ;
+     std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild << "\n";
 }
 //get remaining, used, capacity - below. (space)
 void get_storage()
 {
-
+ std::cout << "[Reminder]" << " " << "get_storage() needs work!";
 }
 
 int main()
