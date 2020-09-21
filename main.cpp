@@ -4,7 +4,9 @@
 #include<tchar.h>
 #include<ctime>
 #include<chrono>
-
+#include<filesystem>
+//test
+namespace file_system = std::filesystem;
 #define UNLEN 256
 #define UNCLEN 256
 
@@ -62,6 +64,9 @@ void get_version()
 void get_storage()
 {
  std::cout << "[Reminder]" << " " << "get_storage() needs work!";
+ std::filesystem::space_info devi = file_system::space("/dev/null"); 
+ std::filesystem::space_info tmpi = file_system::space("/tmp");
+ // continue tomorrow 
 }
 
 int main()
