@@ -5,12 +5,12 @@
 #include<ctime>
 #include<chrono>
 #include<filesystem>
-//test
+
 namespace file_system = std::filesystem;
 #define UNLEN 256
 #define UNCLEN 256
 
-//Prints current user.
+//current user.
 void get_username()
 {
     TCHAR user[UNLEN+1];
@@ -21,7 +21,7 @@ void get_username()
 
 }
 
-//Prints Machine Name.
+//Machine Name.
 void get_compname()
 {
     TCHAR comp[UNCLEN+1];
@@ -39,7 +39,7 @@ void last_accesed()
     std::cout <<"last login: " << dt;
 }
 
-//Prints version.
+
 void get_version()
 {
     DWORD dwVersion = 0;
@@ -60,13 +60,13 @@ void get_version()
     //printf("Version is %d.%d %d\n",dwMajorVersion, dwMinorVersion, dwBuild);    
      std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild << "\n";
 }
-//get remaining, used, capacity - below. (space)
+
 void get_storage()
 {
  std::cout << "[Reminder]" << " " << "get_storage() needs work!";
  std::filesystem::space_info devi = file_system::space("/dev/null"); 
  std::filesystem::space_info tmpi = file_system::space("/tmp");
- // continue tomorrow 
+ 
 }
 
 int main()
