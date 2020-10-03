@@ -7,10 +7,11 @@
 #include<filesystem>
 
 namespace file_system = std::filesystem;
+
 #define UNLEN 256
 #define UNCLEN 256
 
-//current user.
+//Current User on machine
 void get_username()
 {
     TCHAR user[UNLEN+1];
@@ -21,7 +22,7 @@ void get_username()
 
 }
 
-//Machine Name.
+//Machine Name
 void get_compname()
 {
     TCHAR comp[UNCLEN+1];
@@ -39,7 +40,7 @@ void last_accesed()
     std::cout <<"last login: " << dt;
 }
 
-
+//Gets current version.
 void get_version()
 {
     DWORD dwVersion = 0;
@@ -66,7 +67,6 @@ void get_storage()
  std::cout << "[Reminder]" << " " << "get_storage() needs work!";
  std::filesystem::space_info devi = file_system::space("/dev/null"); 
  std::filesystem::space_info tmpi = file_system::space("/tmp");
- 
 }
 
 int main()
