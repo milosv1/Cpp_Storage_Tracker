@@ -3,27 +3,29 @@
 #include<stdio.h>
 #include<tchar.h>
 #include<ctime>
-#include<chrono>
-#include<filesystem>
-
-
-namespace file_system = std::filesystem;
 
 #define UNLEN 256
 #define UNCLEN 256
 
-//Current User on machine
+void greeting()
+{
+   //std::cout << "\n";
+   std::cout << "Welcome:" << "\n";
+   std::cout << "This is my CPP Storage Tracker - " << "\n";
+   std::cout << "A project written in C++ based on my Py Storage Tracker." << "\n\n";  
+}
+
 void get_username()
 {
     TCHAR user[UNLEN+1];
     DWORD user_len = UNLEN+1;
 
     GetUserName((TCHAR*)user, &user_len);
+    std::cout << "Last login: " << __TIME__ << "\n";
     std::cout << "User: " << user << "\n";
 
 }
 
-//Machine Name
 void get_compname()
 {
     TCHAR comp[UNCLEN+1];
@@ -33,15 +35,7 @@ void get_compname()
     std::cout << "Machine Name: " << comp << "\n";
 }
 
-//Prints: last accessed on: Day/time/Year.
-void last_accesed()
-{
-    time_t now = time(0);
-    char* dt = ctime(&now);
-    std::cout <<"last login: " << dt;
-}
 
-//Gets current version.
 void get_version()
 {
     DWORD dwVersion = 0;
@@ -63,18 +57,10 @@ void get_version()
      std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild << "\n";
 }
 
-void get_storage()
-{
- std::cout << "[Reminder]" << " " << "get_storage() needs work!";
- std::filesystem::space_info devi = file_system::space("/dev/null"); 
- std::filesystem::space_info tmpi = file_system::space("/tmp");
-}
-
 int main()
 {   
+    greeting();
     get_username();
     get_compname();
-    last_accesed();
     get_version();
-    get_storage();
 }
