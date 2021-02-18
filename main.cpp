@@ -9,10 +9,10 @@
 
 void greeting()
 {
-   //std::cout << "\n";
    std::cout << "Welcome:" << "\n";
-   std::cout << "This is my CPP Storage Tracker - " << "\n";
-   std::cout << "A project written in C++ based on my Py Storage Tracker." << "\n\n";  
+   std::cout << "This is my CPP Storage Tracker -  " << "\n";
+   std::cout << "A project written in C++ based on my Py Storage Tracker." << "\n";
+   std::cout << "This project will be developed over time by Milos.Vuksanovic " << "\n\n";  
 }
 
 void get_username()
