@@ -57,10 +57,29 @@ void get_version()
      std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild << "\n";
 }
 
+void print_os()
+{
+  #if __APPLE__
+	    // apple specific code
+        printf("OS: Apple OS\n");
+	#elif _WIN32
+	    // windows specific code
+        printf("OS: Windows OS\n");
+	#elif __LINUX__
+	    // linux specific code
+        printf("OS: Linux OS\n");
+	#elif BSD
+        printf("OS: BSD based OS\n");
+	#else
+        printf("OS: Not a Windows OS");
+	#endif
+}
+
 int main()
 {   
     greeting();
     get_username();
     get_compname();
     get_version();
+    print_os();
 }
