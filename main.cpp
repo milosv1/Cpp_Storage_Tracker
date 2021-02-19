@@ -3,14 +3,17 @@
 #include<stdio.h>
 #include<tchar.h>
 #include<ctime>
+#include<cstdlib>
 
 #define UNLEN 256
 #define UNCLEN 256
+#define DIV 1024
+#define WIDTH 7
 
 void greeting()
 {
    std::cout << "Welcome:" << "\n";
-   std::cout << "This is my CPP Storage Tracker -  " << "\n";
+   std::cout << "This is my C++ Storage Tracker -  " << "\n";
    std::cout << "A project written in C++ based on my Py Storage Tracker." << "\n";
    std::cout << "This project will be developed over time by Milos.Vuksanovic " << "\n\n";  
 }
@@ -75,6 +78,22 @@ void print_os()
 	#endif
 }
 
+void get_ram()
+{
+    MEMORYSTATUSEX statex;
+
+    statex.dwLength = sizeof(statex);
+    GlobalMemoryStatusEx (&statex);
+    //std::statex.dwlength = fmt::format("RAM: {}", sizeof(statex));
+    //printf("RAM: %d", sizeof(statex));
+
+    //test run:
+    _tprintf(TEXT("Currently there is: %*ld percent of memory in use."),
+            WIDTH, statex.dwMemoryLoad);
+
+
+}
+
 int main()
 {   
     greeting();
@@ -82,4 +101,5 @@ int main()
     get_compname();
     get_version();
     print_os();
+    get_ram();
 }
