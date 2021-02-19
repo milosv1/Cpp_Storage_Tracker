@@ -78,7 +78,7 @@ void print_os()
 	#endif
 }
 
-void get_ram()
+void get_mem_usage()
 {
     MEMORYSTATUSEX statex;
 
@@ -101,5 +101,5 @@ int main()
     get_compname();
     get_version();
     print_os();
-    get_ram();
+    get_mem_usage();
 }
