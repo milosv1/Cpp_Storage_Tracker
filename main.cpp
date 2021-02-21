@@ -26,7 +26,6 @@ void get_username()
     GetUserName((TCHAR*)user, &user_len);
     std::cout << "Last login: " << __TIME__ << "\n";
     std::cout << "User: " << user << "\n";
-
 }
 
 void get_compname()
@@ -48,11 +47,9 @@ void get_version()
     
     dwVersion = GetVersion();
     
-    
     dwMajorVersion = (DWORD)(LOBYTE(LOWORD(dwVersion)));
     dwMinorVersion = (DWORD)(HIBYTE(LOWORD(dwVersion)));
 
-    
     if (dwVersion < 0x80000000)
         dwBuild = (DWORD)(HIWORD(dwVersion));
 
@@ -78,7 +75,7 @@ void print_os()
 	#endif
 }
 
-void get_mem_usage()
+void get_mem_info()
 {
     MEMORYSTATUSEX statex;
 
@@ -90,8 +87,6 @@ void get_mem_usage()
     //test run:
     _tprintf(TEXT("Currently there is: %*ld percent of memory in use."),
             WIDTH, statex.dwMemoryLoad);
-
-
 }
 
 int main()
@@ -101,5 +96,5 @@ int main()
     get_compname();
     get_version();
     print_os();
-    get_mem_usage();
+    get_mem_info();
 }
