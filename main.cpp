@@ -4,7 +4,9 @@
 #include<tchar.h>
 #include<ctime>
 #include<cstdlib>
+#include<wininet.h>
 
+#pragma comment(lib,"wininet.lib")
 #define UNLEN 256
 #define UNCLEN 256
 #define DIV 1024
@@ -27,6 +29,7 @@ void get_username()
     std::cout << "Last login: " << __TIME__ << std::endl;
     std::cout << "User: " << user << std::endl;
 }
+
 
 void get_compname()
 {
@@ -84,6 +87,42 @@ void get_mem_info()
     
     _tprintf(TEXT("Currently there is: %*ld percent of memory in use."),
             WIDTH, statex.dwMemoryLoad);
+
+    std::cout << " " << std::endl;        
+}
+
+void check_connection()
+{
+    //experimental code -- starts:
+    //char url[128];
+    //strcat(url,"https://www.google.com");
+  //  bool cConnection = InternetCheckConnection("https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0);
+
+  //  if( cConnection )
+  //  {
+  //      bool conn_made = true;
+  //      std::cout << "Connection:" + conn_made << std::endl;
+
+  //  }
+   // else
+    //{
+   //     bool no_conn = false;
+  //      std::cout << "Connection made:" + no_conn << std::endl;
+   // }
+    //experimental code -- ends.
+
+    //system("ping www.google.com -t 2 > nul") == 0
+    //Temporary solution.
+   if( system("ping -n 2 www.google.com") == 0)
+   {   std::cout << " " << std::endl; 
+       std::cout << "Working.." << std::endl;
+       std::cout << "Connection made" << std::endl;
+   }
+   else
+   {
+       std::cout << "Not working..." << std::endl;
+       std::cout << "Connection not made" << std::endl;
+   }
 }
 
 int main()
@@ -94,4 +133,5 @@ int main()
     get_version();
     print_os();
     get_mem_info();
+    check_connection();
 }
