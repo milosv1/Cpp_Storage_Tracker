@@ -93,36 +93,27 @@ void get_mem_info()
 
 void check_connection()
 {
-    //experimental code -- starts:
-    //char url[128];
-    //strcat(url,"https://www.google.com");
-  //  bool cConnection = InternetCheckConnection("https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0);
+   //this code pings it to google twice to test connection, we can actually have this as a temp solution.
+   //[TODO]: have an argument set so the user can input --test_conn , then run this code. 
+   int _pingTwice = 2;
+   int testNum = 0;
+   while(testNum < _pingTwice)
+    {
+        if( system("ping -n 2 www.google.com") == 0)
+        {   
+            std::cout << " " << std::endl; 
+            std::cout << "Working.." << std::endl;
+            std::cout << "Connection made" << std::endl;
+            testNum++;
+        }
+        else
+        {
+            std::cout << "Not working..." << std::endl;
+            std::cout << "Connection not made" << std::endl;
+        }
+        std::cout << "Completed tests: " << testNum << std::endl;
+    }
 
-  //  if( cConnection )
-  //  {
-  //      bool conn_made = true;
-  //      std::cout << "Connection:" + conn_made << std::endl;
-
-  //  }
-   // else
-    //{
-   //     bool no_conn = false;
-  //      std::cout << "Connection made:" + no_conn << std::endl;
-   // }
-    //experimental code -- ends.
-
-    //system("ping www.google.com -t 2 > nul") == 0
-    //Temporary solution.
-   if( system("ping -n 2 www.google.com") == 0)
-   {   std::cout << " " << std::endl; 
-       std::cout << "Working.." << std::endl;
-       std::cout << "Connection made" << std::endl;
-   }
-   else
-   {
-       std::cout << "Not working..." << std::endl;
-       std::cout << "Connection not made" << std::endl;
-   }
 }
 
 int main()
