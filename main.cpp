@@ -102,14 +102,12 @@ void check_connection()
         if( system("ping -n 2 www.google.com") == 0)
         {   
             std::cout << " " << std::endl; 
-            std::cout << "Working.." << std::endl;
-            std::cout << "Connection made" << std::endl;
+            std::cout << "Connection successful" << std::endl;
             testNum++;
         }
         else
         {
-            std::cout << "Not working..." << std::endl;
-            std::cout << "Connection not made" << std::endl;
+            std::cout << "Connection unsuccessful" << std::endl;
         }
         std::cout << "Completed tests: " << testNum << std::endl;
     }
