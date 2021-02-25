@@ -5,26 +5,34 @@
 #include<ctime>
 #include<cstdlib>
 #include<wininet.h>
+#include<typeinfo>
 
 #pragma comment(lib,"wininet.lib")
+
 #define UNLEN 256
 #define UNCLEN 256
 #define DIV 1024
 #define WIDTH 7
 
+
+
+
 void greeting()
 {  
-   std::cout << "Welcome:" << std::endl;
-   std::cout << "This is my C++ Storage Tracker -  " << std::endl;
+   TCHAR user[UNLEN+1]; 
+   DWORD user_len = UNLEN+1;
+   GetUserName((TCHAR*)user, &user_len);
+   std::cout << " " << std::endl;
+   std::cout << "Welcome, " << user << "." << std::endl;
+   std::cout << "This is my C++ Storage Tracker." << std::endl;
    std::cout << "A project written in C++ based on my Py Storage Tracker." << std::endl;
    std::cout << "This project will be developed over time by Milos.Vuksanovic " << "\n\n";  
 }
 
 void get_username()
-{
+{ 
     TCHAR user[UNLEN+1];
     DWORD user_len = UNLEN+1;
-
     GetUserName((TCHAR*)user, &user_len);
     std::cout << "Last login: " << __TIME__ << std::endl;
     std::cout << "User: " << user << std::endl;
