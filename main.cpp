@@ -14,9 +14,6 @@
 #define DIV 1024
 #define WIDTH 7
 
-
-
-
 void greeting()
 {  
    TCHAR user[UNLEN+1]; 
@@ -38,7 +35,6 @@ void get_username()
     std::cout << "User: " << user << std::endl;
 }
 
-
 void get_compname()
 {
     TCHAR comp[UNCLEN+1];
@@ -47,7 +43,6 @@ void get_compname()
     GetComputerName((TCHAR*)comp, &comp_len);
     std::cout << "Machine Name: " << comp << std::endl;
 }
-
 
 void get_version()
 {
