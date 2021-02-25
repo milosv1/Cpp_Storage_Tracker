@@ -95,32 +95,57 @@ void check_connection()
 {
    //this code pings it to google twice to test connection, we can actually have this as a temp solution.
    //[TODO]: have an argument set so the user can input --test_conn , then run this code. 
-   int _pingTwice = 2;
+   int pingTimes;
    int testNum = 0;
-   while(testNum < _pingTwice)
-    {
+   std::cout << "How many times to ping?: " << std::endl;
+   std::cin >> pingTimes;
+
+   if(pingTimes > 0){
+    
+      while(testNum < pingTimes)
+       {
         if( system("ping -n 2 www.google.com") == 0)
         {   
             std::cout << " " << std::endl; 
             std::cout << "Connection successful" << std::endl;
-            testNum++;
+            ++testNum;
         }
         else
         {
             std::cout << "Connection unsuccessful" << std::endl;
         }
-        std::cout << "Completed tests: " << testNum << std::endl;
-    }
+        std::cout << "Ping completed: " << testNum << std::endl;
+      }
+   }
+   else if(pingTimes == 0)
+   {
+       std::cout << "No tests entered." << std::endl;
+   }
 
 }
 
 int main()
 {   
-    greeting();
-    get_username();
-    get_compname();
-    get_version();
-    print_os();
-    get_mem_info();
-    check_connection();
+    char ans;
+    std::cout << "Do you want to run a connection test? (y/n OR Y/N)" << std::endl;
+    std::cin >> ans;
+    if(ans == 'y' || ans == 'Y'){
+        greeting();
+        get_username();
+        get_compname();
+        get_version();
+        print_os();
+        get_mem_info();
+        check_connection();        
+    }
+    else if(ans == 'n' || ans == 'N')
+    {
+        greeting();
+        get_username();
+        get_compname();
+        get_version();
+        print_os();
+        get_mem_info();
+    }
+
 }
