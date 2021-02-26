@@ -58,21 +58,17 @@ void get_version()
 
     if (dwVersion < 0x80000000)
         dwBuild = (DWORD)(HIWORD(dwVersion));
-
-    //printf("Version is %d.%d %d\n",dwMajorVersion, dwMinorVersion, dwBuild);    
+   
      std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild << std::endl;
 }
 
 void print_os()
 {
   #if __APPLE__
-	    // apple specific code
         printf("OS: Apple OS\n");
 	#elif _WIN32
-	    // windows specific code
         printf("OS: Windows OS\n");
 	#elif __LINUX__
-	    // linux specific code
         printf("OS: Linux OS\n");
 	#elif BSD
         printf("OS: BSD based OS\n");
@@ -96,8 +92,6 @@ void get_mem_info()
 
 void check_connection()
 {
-   //this code pings it to google twice to test connection, we can actually have this as a temp solution.
-   //[TODO]: have an argument set so the user can input --test_conn , then run this code. 
    int pingTimes;
    int testNum = 0;
    std::cout << "How many times to ping?: " << std::endl;
@@ -134,9 +128,7 @@ int main()
     std::cout << "Do you want to run a connection test? (y/n OR Y/N)" << std::endl;
     std::cin >> ans;
     if(ans == 'y' || ans == 'Y'){   
-        //check_conn_ans = true;
         std::cout << "check_connection() ?: " << std::boolalpha << true << std::endl; 
-        //std::cout << "Test: " << std::boolalpha << true << std::endl;
         greeting();
         get_username();
         get_compname();
@@ -147,7 +139,6 @@ int main()
     }
     else if(ans == 'n' || ans == 'N')
     {
-        //check_conn_ans = false;
         std::cout<< "check_connection() ?: " << std::boolalpha << false << std::endl;
         greeting();
         get_username();
