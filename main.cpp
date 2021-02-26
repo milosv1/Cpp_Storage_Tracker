@@ -98,7 +98,6 @@ void check_connection()
    std::cin >> pingTimes;
 
    if(pingTimes > 0){
-    
       while(testNum < pingTimes)
        {
         if( system("ping -n 2 www.google.com") == 0)
