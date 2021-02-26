@@ -130,9 +130,13 @@ void check_connection()
 int main()
 {   
     char ans;
+    bool check_conn_ans;
     std::cout << "Do you want to run a connection test? (y/n OR Y/N)" << std::endl;
     std::cin >> ans;
-    if(ans == 'y' || ans == 'Y'){
+    if(ans == 'y' || ans == 'Y'){   
+        //check_conn_ans = true;
+        std::cout << "check_connection() ?: " << std::boolalpha << true << std::endl; 
+        //std::cout << "Test: " << std::boolalpha << true << std::endl;
         greeting();
         get_username();
         get_compname();
@@ -143,6 +147,8 @@ int main()
     }
     else if(ans == 'n' || ans == 'N')
     {
+        //check_conn_ans = false;
+        std::cout<< "check_connection() ?: " << std::boolalpha << false << std::endl;
         greeting();
         get_username();
         get_compname();
@@ -150,5 +156,4 @@ int main()
         print_os();
         get_mem_info();
     }
-
 }
