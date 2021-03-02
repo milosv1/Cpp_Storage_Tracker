@@ -99,8 +99,7 @@ void check_connection()
 
    if(pingTimes > 0){
       while(testNum < pingTimes)
-       {
-        //[Note] Changed from: ping -n 2 www.google.com   
+       { 
         if( system("ping www.google.com") == 0)
         {   
             std::cout << " " << std::endl; 
