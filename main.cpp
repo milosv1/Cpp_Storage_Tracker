@@ -14,6 +14,8 @@
 #define DIV 1024
 #define WIDTH 7
 
+//[TODO]: Get bytes sent & recieved.
+
 void greeting()
 {  
    TCHAR user[UNLEN+1]; 
