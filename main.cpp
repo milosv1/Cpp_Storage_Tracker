@@ -172,7 +172,7 @@ int main()
     } 
     else if(isdigit(ans))
     {
-        std::cout << ans << "cannot be int. (y/n OR Y/N)" << std::endl;
+        std::cout << ans << "Cannot be digit. (y/n OR Y/N)" << std::endl;
     }
     }
     while(ans != 'y' || ans !='Y' || ans != 'n' || ans !='N' || ans != 'q' || ans != 'Q');
