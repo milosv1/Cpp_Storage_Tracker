@@ -119,6 +119,10 @@ void check_connection()
    {
        std::cout << "No tests entered." << std::endl;
    }
+   else if(pingTimes < 0)
+   {
+       std::cout << "pingTimes needs to be greater than 0." << std::endl;
+   }
 
 }
 
