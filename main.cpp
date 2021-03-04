@@ -170,6 +170,10 @@ int main()
         std::cout << "Thank you! " << user << std::endl;
         break;
     } 
+    else if(isdigit(ans))
+    {
+        std::cout << ans << "cannot be int. (y/n OR Y/N)" << std::endl;
+    }
     }
     while(ans != 'y' || ans !='Y' || ans != 'n' || ans !='N' || ans != 'q' || ans != 'Q');
 
