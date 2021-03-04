@@ -122,6 +122,12 @@ void check_connection()
 
 }
 
+void get_bytes_sent_recieved()
+{
+    //gets sent and recieved bytes.
+    //[TODO]: get sent and recieved bytes.
+}
+
 int main()
 {   
     char ans;
