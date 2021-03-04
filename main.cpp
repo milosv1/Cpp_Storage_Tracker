@@ -14,8 +14,6 @@
 #define DIV 1024
 #define WIDTH 7
 
-//[TODO]: Get bytes sent & recieved.
-
 void greeting()
 {  
    TCHAR user[UNLEN+1]; 
@@ -136,8 +134,15 @@ int main()
 {   
     char ans;
     bool check_conn_ans;
+
+    TCHAR user[UNLEN+1];
+    DWORD user_len = UNLEN+1;
+    GetUserName((TCHAR*)user, &user_len);
+
+    do {
     std::cout << "Do you want to run a connection test? (y/n OR Y/N)" << std::endl;
-    std::cin >> ans;
+    std::cin >> ans;   
+
     if(ans == 'y' || ans == 'Y'){   
         std::cout << "check_connection() ?: " << std::boolalpha << true << std::endl; 
         greeting();
@@ -157,5 +162,18 @@ int main()
         get_version();
         print_os();
         get_mem_info();
+        break;
     }
+    else if(ans =='q'|| ans == 'Q' )
+    {
+        std::cout << "Exiting.." << std::endl;
+        std::cout << "Thank you! " << user << std::endl;
+        break;
+    } 
+    }
+    while(ans != 'y' || ans !='Y' || ans != 'n' || ans !='N' || ans != 'q' || ans != 'Q');
+
+    
+    
+    
 }
