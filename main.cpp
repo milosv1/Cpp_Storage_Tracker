@@ -96,6 +96,7 @@ void check_connection()
    int testNum = 0;
    std::cout << "How many times to ping?: " << std::endl;
    std::cin >> pingTimes;
+   std::printf("Running %d tests, please be patient.", pingTimes);
 
    if(pingTimes > 0){
       while(testNum < pingTimes)
@@ -141,7 +142,7 @@ int main()
 
     do {
     std::cout << "Do you want to run a connection test? (y/n OR Y/N)" << std::endl;
-    std::cin >> ans;   
+    std::cin >> ans;  
 
     if(ans == 'y' || ans == 'Y'){   
         std::cout << "check_connection() ?: " << std::boolalpha << true << std::endl; 
