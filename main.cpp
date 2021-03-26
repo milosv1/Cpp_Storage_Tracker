@@ -105,6 +105,8 @@ void check_connection()
         {   
             std::cout << " " << std::endl; 
             std::cout << "Connection successful" << std::endl;
+            std::cout << "--------------------------------------" << std::endl;
+            std::printf("Currently completing: %d, currently at:", pingTimes);
             ++testNum;
         }
         else
@@ -128,7 +130,7 @@ void check_connection()
 void get_bytes_sent_recieved()
 {
     //gets sent and recieved bytes.
-    //[TODO]: get sent and recieved bytes.
+    //[TODO]: get sent and recieved bytes. 
 }
 
 int main()
