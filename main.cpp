@@ -64,7 +64,6 @@ void get_version()
 
 void print_os()
 {
-	//This is a test comment from Visual Studio IDE...
   #if __APPLE__
         printf("OS: Apple OS\n");
 	#elif _WIN32
