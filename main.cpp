@@ -64,6 +64,7 @@ void get_version()
 
 void print_os()
 {
+	//This is a test comment from Visual Studio IDE.
   #if __APPLE__
         printf("OS: Apple OS\n");
 	#elif _WIN32
@@ -147,7 +148,7 @@ int main()
     std::cin >> ans;  
 
     if(ans == 'y' || ans == 'Y'){   
-        std::cout << "check_connection() ?: " << std::boolalpha << true << std::endl; 
+        std::cout << "Check Connection: " << std::boolalpha << true << std::endl; 
         greeting();
         get_username();
         get_compname();
@@ -158,7 +159,7 @@ int main()
     }
     else if(ans == 'n' || ans == 'N')
     {
-        std::cout<< "check_connection() ?: " << std::boolalpha << false << std::endl;
+        std::cout<< "Check Connection: " << std::boolalpha << false << std::endl;
         greeting();
         get_username();
         get_compname();
