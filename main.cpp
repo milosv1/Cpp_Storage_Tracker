@@ -131,6 +131,7 @@ void get_bytes_sent_recieved()
 {
     //gets sent and recieved bytes.
     //[TODO]: get sent and recieved bytes. 
+	//Then output those results here.
 }
 
 int main()
