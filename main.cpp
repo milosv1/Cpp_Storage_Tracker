@@ -86,7 +86,7 @@ void get_mem_info()
                                             //percent
    // _tprintf(TEXT("Currently there is: %*ld percent of memory in use."),
    //         WIDTH, statex.dwMemoryLoad);
-    std::printf("Memory percent in use: %d",statex.dwMemoryLoad);
+    std::printf("Memory (in use): %d percent",statex.dwMemoryLoad);
     std::cout << " " << std::endl;        
 }
 
