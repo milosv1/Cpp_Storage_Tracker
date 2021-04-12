@@ -136,7 +136,6 @@ void get_bytes_sent_recieved()
     //gets sent and recieved bytes.
     //[TODO]: get sent and recieved bytes. 
 	//Then output those results here..
-	std::cout << "test run..." << std::endl; 
 }
 
 int main()
@@ -160,7 +159,8 @@ int main()
         get_version();
         print_os();
         get_mem_info();
-        check_connection();        
+        //get_bytes_sent_recieved();
+        check_connection();  
     }
     else if(ans == 'n' || ans == 'N')
     {
@@ -171,6 +171,7 @@ int main()
         get_version();
         print_os();
         get_mem_info();
+        //get_bytes_sent_recieved();
         break;
     }
     else if(ans =='q'|| ans == 'Q' )
