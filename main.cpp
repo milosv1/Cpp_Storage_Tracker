@@ -138,6 +138,14 @@ void get_bytes_sent_recieved()
 	//Then output those results here..
 }
 
+void get_ram()
+{
+	MEMORYSTATUSEX statex;
+	statex.dwLength = sizeof(statex);
+	GlobalMemoryStatusEx(&statex);
+	std::cout << "Physical RAM: " << (float)statex.ullTotalPhys/(1024*1024*1024) << std::endl;
+}
+
 int main()
 {   
     char ans;
@@ -159,6 +167,7 @@ int main()
         get_version();
         print_os();
         get_mem_info();
+		get_ram();
         //get_bytes_sent_recieved();
         check_connection();  
     }
@@ -171,6 +180,7 @@ int main()
         get_version();
         print_os();
         get_mem_info();
+		get_ram();
         //get_bytes_sent_recieved();
         break;
     }
@@ -187,7 +197,5 @@ int main()
     }
     while(ans != 'y' || ans !='Y' || ans != 'n' || ans !='N' || ans != 'q' || ans != 'Q');
 
-    
-    
     
 }
