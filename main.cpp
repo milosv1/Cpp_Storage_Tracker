@@ -31,8 +31,8 @@ void get_username()
     TCHAR user[UNLEN+1];
     DWORD user_len = UNLEN+1;
     GetUserName((TCHAR*)user, &user_len);
-    std::cout << "Last login: " << __TIME__ << std::endl;
     std::cout << "User: " << user << std::endl;
+    std::cout << "Last login: " << __TIME__ << "\n" << std::endl;
 }
 
 void get_compname()
@@ -65,15 +65,15 @@ void get_version()
 void print_os()
 {
   #if __APPLE__
-        printf("OS: Apple OS\n");
+        printf("Operating System: Apple OS \n");
 	#elif _WIN32
-        printf("OS: Windows OS\n");
+        printf("Operating System: Windows OS \n");
 	#elif __LINUX__
-        printf("OS: Linux OS\n");
+        printf("Operating System: Linux OS \n");
 	#elif BSD
-        printf("OS: BSD based OS\n");
-	#else
-        printf("OS: Not a Windows OS");
+        printf("Operating System: BSD based OS \n");
+	//#else
+        //printf("OS: Not a Windows OS");
 	#endif
 }
 
