@@ -83,10 +83,10 @@ void get_mem_info()
 
     statex.dwLength = sizeof(statex);
     GlobalMemoryStatusEx (&statex);
-    
-    _tprintf(TEXT("Currently there is: %*ld percent of memory in use."),
-            WIDTH, statex.dwMemoryLoad);
-
+                                            //percent
+   // _tprintf(TEXT("Currently there is: %*ld percent of memory in use."),
+   //         WIDTH, statex.dwMemoryLoad);
+    std::printf("Memory percent in use: %d",statex.dwMemoryLoad);
     std::cout << " " << std::endl;        
 }
 
