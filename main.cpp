@@ -136,6 +136,11 @@ void get_bytes_sent_recieved()
     //gets sent and recieved bytes.
     //[TODO]: get sent and recieved bytes. 
 	//Then output those results here..
+
+    //DWORD dwOutOctets;
+    //DWORD dwInOctets;
+    std::cout << "Waiting to be implemented.." << std::endl;
+    
 }
 
 void get_ram()
@@ -168,7 +173,7 @@ int main()
         print_os();
         get_mem_info();
 		get_ram();
-        //get_bytes_sent_recieved();
+        get_bytes_sent_recieved();
         check_connection();  
     }
     else if(ans == 'n' || ans == 'N')
@@ -181,7 +186,7 @@ int main()
         print_os();
         get_mem_info();
 		get_ram();
-        //get_bytes_sent_recieved();
+        get_bytes_sent_recieved();
         break;
     }
     else if(ans =='q'|| ans == 'Q' )
