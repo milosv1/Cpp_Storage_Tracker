@@ -6,8 +6,11 @@
 #include<cstdlib>
 #include<wininet.h>
 #include<typeinfo>
+#include<iphlpapi.h>
 
 #pragma comment(lib,"wininet.lib")
+//#pragma comment(lib, "Iphlpapi.lib")
+
 
 #define UNLEN 256
 #define UNCLEN 256
@@ -130,19 +133,44 @@ void check_connection()
    }
    
 }
-
-void get_bytes_sent_recieved()
+/*
+bool getSentAndRecievedBits(DWORD &dwbitTotalRecv, DWORD &dwbitTotalSend)
 {
-    //gets sent and recieved bytes.
-    //[TODO]: get sent and recieved bytes. 
-	//Then output those results here..
-
-    //DWORD dwOutOctets;
-    //DWORD dwInOctets;
-    std::cout << "Waiting to be implemented.." << std::endl;
-    
+     DWORD dwBufferLen = 0;  
+    GetIfTable(NULL, &dwBufferLen, 0);   
+  
+          
+    PMIB_IFTABLE pMibIfTable = (MIB_IFTABLE*)malloc(dwBufferLen);  
+  
+         
+    DWORD dwRet = GetIfTable(pMibIfTable, &dwBufferLen, 0);  
+    if(NO_ERROR != dwRet)  
+    {  
+        std::cout<<"GetIfTable != NO_ERROR, ErrorCode="<<dwRet<<std::endl;  
+        free(pMibIfTable);  
+        return false;  
+    }  
+  
+    dwbitTotalRecv = dwbitTotalSend = 0;  
+  
+        
+    for(int i = 0; i != pMibIfTable->dwNumEntries; ++i)  
+    {  
+        if (pMibIfTable->table[i].dwType <= 23)  
+        {  
+            dwbitTotalRecv += pMibIfTable->table[i].dwInOctets;  
+            dwbitTotalSend += pMibIfTable->table[i].dwOutOctets;  
+        }  
+    }  
+  
+        
+    dwbitTotalRecv *= 8;  
+    dwbitTotalSend *= 8;  
+  
+    free(pMibIfTable);  
+    return true;  
 }
-
+*/
 void get_ram()
 {
 	MEMORYSTATUSEX statex;
@@ -173,7 +201,7 @@ int main()
         print_os();
         get_mem_info();
 		get_ram();
-        get_bytes_sent_recieved();
+        //getSentAndRecievedBits();
         check_connection();  
     }
     else if(ans == 'n' || ans == 'N')
@@ -186,7 +214,7 @@ int main()
         print_os();
         get_mem_info();
 		get_ram();
-        get_bytes_sent_recieved();
+        //getSentAndRecievedBits();
         break;
     }
     else if(ans =='q'|| ans == 'Q' )
