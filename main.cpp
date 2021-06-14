@@ -98,8 +98,32 @@ void check_connection()
    int pingTimes;
    int testNum = 0;
    std::cout << "How many times to ping?: " << std::endl;
-   std::cin >> pingTimes;
-   std::printf("Running %d tests, please be patient...", pingTimes);
+   std::cin >> pingTimes;  
+   if(pingTimes == 1)
+   {
+       std::printf("Running %d test, please be patient...", pingTimes); 
+       while(testNum < pingTimes)
+       {
+           while(testNum < pingTimes)
+       { 
+        if( system("ping www.google.com") == 0)
+        {   
+            std::cout << " " << std::endl; 
+            std::cout << "Connection successful!" << std::endl;
+            std::cout << "--------------------------------------" << std::endl;
+            std::printf("Currently completing: %d, currently at:", pingTimes);
+            ++testNum;
+        }
+        else
+        {
+            std::cout << "Connection unsuccessful" << std::endl;
+        }
+        std::cout << "Ping completed: " << testNum << std::endl;
+      }
+       }
+   }else if(pingTimes > 1)
+   {
+    std::printf("Running %d tests, please be patient...", pingTimes);
 
    if(pingTimes > 0 && pingTimes < 10){
       while(testNum < pingTimes)
@@ -131,6 +155,8 @@ void check_connection()
    {
 	   std::cout << "Cannot have more than 10 tests done." << std::endl;
    }
+   }
+  
    
 }
 /*
