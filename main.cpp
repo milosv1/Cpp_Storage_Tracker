@@ -107,7 +107,7 @@ void check_connection()
         if( system("ping www.google.com") == 0)
         {   
             std::cout << " " << std::endl; 
-            std::cout << "Connection successful" << std::endl;
+            std::cout << "Connection successful!" << std::endl;
             std::cout << "--------------------------------------" << std::endl;
             std::printf("Currently completing: %d, currently at:", pingTimes);
             ++testNum;
