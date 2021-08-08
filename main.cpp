@@ -36,6 +36,7 @@ void get_username()
     GetUserName((TCHAR*)user, &user_len);
     std::cout << "User: " << user << std::endl;
     std::cout << "Last login: " << __TIME__ << "\n" << std::endl;
+    std::cout << "--------------------------" << std::endl;
 }
 
 void get_compname()
@@ -97,6 +98,10 @@ void check_connection()
 {
    int pingTimes;
    int testNum = 0;
+   
+   HANDLE hConsole;
+   int colour = 10; 
+
    std::cout << "How many times to ping?: " << std::endl;
    std::cin >> pingTimes;  
    if(pingTimes == 1)
