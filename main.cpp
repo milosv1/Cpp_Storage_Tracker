@@ -8,8 +8,8 @@
 #include<typeinfo>
 #include<iphlpapi.h>
 
+
 #pragma comment(lib,"wininet.lib")
-//#pragma comment(lib, "Iphlpapi.lib")
 
 
 #define UNLEN 256
@@ -28,7 +28,7 @@ void greeting()
    std::cout << "A project written in C++ based on my Py Storage Tracker." << std::endl;
    std::cout << "This project will be developed over time by Milos.Vuksanovic " << "\n\n";  
 }
-
+//-----------------------------------------------------------------------------
 void get_username()
 { 
     TCHAR user[UNLEN+1];
@@ -38,7 +38,7 @@ void get_username()
     std::cout << "Last login: " << __TIME__ << std::endl;
     std::cout << "--------------------------" << std::endl;
 }
-
+//-----------------------------------------------------------------------------
 void get_compname()
 {
     TCHAR comp[UNCLEN+1];
@@ -47,7 +47,7 @@ void get_compname()
     GetComputerName((TCHAR*)comp, &comp_len);
     std::cout << "Machine Name: " << comp << std::endl;
 }
-
+//-----------------------------------------------------------------------------
 void get_version()
 {
     DWORD dwVersion = 0;
@@ -65,7 +65,7 @@ void get_version()
    
      std::cout << "Version: " << dwMajorVersion << "." << dwMinorVersion << " " << dwBuild << std::endl;
 }
-
+//-----------------------------------------------------------------------------
 void print_os()
 {
   #if __APPLE__
@@ -80,7 +80,7 @@ void print_os()
         //printf("OS: Not a Windows OS");
 	#endif
 }
-
+//-----------------------------------------------------------------------------
 void get_mem_info()
 {
     MEMORYSTATUSEX statex;
@@ -93,7 +93,7 @@ void get_mem_info()
     std::printf("Memory (in use): %d percent",statex.dwMemoryLoad);
     std::cout << " " << std::endl;        
 }
-
+//-----------------------------------------------------------------------------
 void check_connection()
 {
    int pingTimes;
@@ -161,10 +161,8 @@ void check_connection()
 	   std::cout << "Cannot have more than 10 tests done." << std::endl;
    }
    }
-  
-   
 }
-
+//-----------------------------------------------------------------------------
 void get_ram()
 {
 	MEMORYSTATUSEX statex;
@@ -172,7 +170,7 @@ void get_ram()
 	GlobalMemoryStatusEx(&statex);
 	std::cout << "Physical RAM: " << (float)statex.ullTotalPhys/(1024*1024*1024) << std::endl;
 }
-
+//-----------------------------------------------------------------------------
 int main()
 {   
     char ans;
