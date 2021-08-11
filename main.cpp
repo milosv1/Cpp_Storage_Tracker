@@ -35,7 +35,7 @@ void get_username()
     DWORD user_len = UNLEN+1;
     GetUserName((TCHAR*)user, &user_len);
     std::cout << "User: " << user << std::endl;
-    std::cout << "Last login: " << __TIME__ << "\n" << std::endl;
+    std::cout << "Last login: " << __TIME__ << std::endl;
     std::cout << "--------------------------" << std::endl;
 }
 
