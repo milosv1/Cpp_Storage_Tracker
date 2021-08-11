@@ -164,44 +164,7 @@ void check_connection()
   
    
 }
-/*
-bool getSentAndRecievedBits(DWORD &dwbitTotalRecv, DWORD &dwbitTotalSend)
-{
-     DWORD dwBufferLen = 0;  
-    GetIfTable(NULL, &dwBufferLen, 0);   
-  
-          
-    PMIB_IFTABLE pMibIfTable = (MIB_IFTABLE*)malloc(dwBufferLen);  
-  
-         
-    DWORD dwRet = GetIfTable(pMibIfTable, &dwBufferLen, 0);  
-    if(NO_ERROR != dwRet)  
-    {  
-        std::cout<<"GetIfTable != NO_ERROR, ErrorCode="<<dwRet<<std::endl;  
-        free(pMibIfTable);  
-        return false;  
-    }  
-  
-    dwbitTotalRecv = dwbitTotalSend = 0;  
-  
-        
-    for(int i = 0; i != pMibIfTable->dwNumEntries; ++i)  
-    {  
-        if (pMibIfTable->table[i].dwType <= 23)  
-        {  
-            dwbitTotalRecv += pMibIfTable->table[i].dwInOctets;  
-            dwbitTotalSend += pMibIfTable->table[i].dwOutOctets;  
-        }  
-    }  
-  
-        
-    dwbitTotalRecv *= 8;  
-    dwbitTotalSend *= 8;  
-  
-    free(pMibIfTable);  
-    return true;  
-}
-*/
+
 void get_ram()
 {
 	MEMORYSTATUSEX statex;
