@@ -23,10 +23,11 @@ void greeting()
    DWORD user_len = UNLEN+1;
    GetUserName((TCHAR*)user, &user_len);
    std::cout << " " << std::endl;
-   std::cout << "Welcome, " << user << "." << std::endl;
-   std::cout << "This is my C++ Storage Tracker." << std::endl;
-   std::cout << "A project written in C++ based on my Py Storage Tracker." << std::endl;
-   std::cout << "This project will be developed over time by Milos.Vuksanovic " << "\n\n";  
+   std::cout << "Welcome, " << user << "." << "\n\n";
+   std:: cout << "-------------------------" << std::endl;
+//    std::cout << "This is my C++ Storage Tracker." << std::endl;
+//    std::cout << "A project written in C++ based on my Py Storage Tracker." << std::endl;
+//    std::cout << "This project will be developed over time by Milos.Vuksanovic " << "\n\n";  
 }
 //-----------------------------------------------------------------------------
 void get_username()
@@ -106,7 +107,7 @@ void check_connection()
    std::cin >> pingTimes;  
    if(pingTimes == 1)
    {
-       std::printf("Running %d test, please be patient...", pingTimes); 
+       std::printf("Running %d test, please wait...", pingTimes); 
        while(testNum < pingTimes)
        {
            while(testNum < pingTimes)
@@ -212,7 +213,6 @@ int main()
     else if(ans =='q'|| ans == 'Q' )
     {
         std::cout << "Exiting.." << std::endl;
-        std::cout << "Thank you! " << user << std::endl;
         break;
     } 
     else if(isdigit(ans))
