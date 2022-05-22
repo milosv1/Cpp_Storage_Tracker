@@ -25,9 +25,6 @@ void greeting()
    std::cout << " " << std::endl;
    std::cout << "Welcome, " << user << "." << "\n\n";
    std:: cout << "-------------------------" << std::endl;
-//    std::cout << "This is my C++ Storage Tracker." << std::endl;
-//    std::cout << "A project written in C++ based on my Py Storage Tracker." << std::endl;
-//    std::cout << "This project will be developed over time by Milos.Vuksanovic " << "\n\n";  
 }
 //-----------------------------------------------------------------------------
 void get_username()
@@ -182,11 +179,12 @@ int main()
     GetUserName((TCHAR*)user, &user_len);
 
     do {
-    std::cout << "Do you want to run a connection test? (y/n OR Y/N)" << std::endl;
+    std::cout << "Do you want to run a connection test? (y/n)" << std::endl;
     std::cin >> ans;  
+    std::cout << "\n";
 
     if(ans == 'y' || ans == 'Y'){   
-        std::cout << "Check Connection: " << std::boolalpha << true << std::endl; 
+        std::cout << "Check connection?: " << std::boolalpha << true << std::endl; 
         greeting();
         get_username();
         get_compname();
@@ -199,7 +197,7 @@ int main()
     }
     else if(ans == 'n' || ans == 'N')
     {
-        std::cout<< "Check Connection: " << std::boolalpha << false << std::endl;
+        std::cout<< "Check Connection?: " << std::boolalpha << false << std::endl;
         greeting();
         get_username();
         get_compname();
