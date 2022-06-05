@@ -17,18 +17,10 @@
 #define DIV 1024
 #define WIDTH 7
 
-void greeting()
-{  
-   TCHAR user[UNLEN+1]; 
-   DWORD user_len = UNLEN+1;
-   GetUserName((TCHAR*)user, &user_len);
-   std::cout << " " << std::endl;
-   std::cout << "Welcome, " << user << "." << "\n\n";
-   std:: cout << "-------------------------" << std::endl;
-}
 //-----------------------------------------------------------------------------
 void get_username()
 { 
+    std:: cout << "-------------------------" << std::endl;
     TCHAR user[UNLEN+1];
     DWORD user_len = UNLEN+1;
     GetUserName((TCHAR*)user, &user_len);
@@ -185,7 +177,6 @@ int main()
 
     if(ans == 'y' || ans == 'Y'){   
         std::cout << "Check connection?: " << std::boolalpha << true << std::endl; 
-        greeting();
         get_username();
         get_compname();
         get_version();
@@ -198,7 +189,6 @@ int main()
     else if(ans == 'n' || ans == 'N')
     {
         std::cout<< "Check Connection?: " << std::boolalpha << false << std::endl;
-        greeting();
         get_username();
         get_compname();
         get_version();
