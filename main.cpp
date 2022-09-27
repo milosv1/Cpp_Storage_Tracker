@@ -159,7 +159,6 @@ int main()
         print_os();
         get_mem_info();
 		get_ram();
-        //getSentAndRecievedBits();
         check_connection();  
     }
     else if(ans == 'n' || ans == 'N')
@@ -171,7 +170,6 @@ int main()
         print_os();
         get_mem_info();
 		get_ram();
-        //getSentAndRecievedBits();
         break;
     }
     else if(ans =='q'|| ans == 'Q' )
