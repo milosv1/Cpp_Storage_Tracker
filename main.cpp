@@ -87,7 +87,7 @@ void get_mem_info()
 void check_connection()
 {
 
-  int maxPingTimes = 10; 
+  int maxPingTimes = 10; // Maximum number of times you can ping
   int pingTimes; // How many times to check connection
   int testNum = 0; // amount of tests run
    
@@ -95,7 +95,8 @@ void check_connection()
   std::cout << "How many times to ping?: " << std::endl;
   std::cin >> pingTimes;  
 
-   if(pingTimes == 1 || pingTimes < maxPingTimes)
+   // Is pingTimes equal to 1 OR less than or equal to 10?
+   if(pingTimes == 1 || pingTimes <= maxPingTimes)
    {
        std::printf("Running %d tests, please be patient...", pingTimes); 
        while(testNum < pingTimes)
