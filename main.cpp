@@ -1,5 +1,5 @@
 #include<iostream>
-#include<Windows.h>
+#include<windows.h>
 #include<stdio.h>
 #include<tchar.h>
 #include<ctime>
@@ -7,7 +7,7 @@
 #include<wininet.h>
 #include<typeinfo>
 #include<iphlpapi.h>
-
+#include<ctime>
 
 #pragma comment(lib,"wininet.lib")
 
@@ -86,17 +86,18 @@ void get_mem_info()
 //-----------------------------------------------------------------------------
 void check_connection()
 {
-   int pingTimes;
-   int testNum = 0;
-   
-   HANDLE hConsole;
-   int colour = 10; 
 
-   std::cout << "How many times to ping?: " << std::endl;
-   std::cin >> pingTimes;  
-   if(pingTimes == 1)
+  int maxPingTimes = 10; 
+  int pingTimes; // How many times to check connection
+  int testNum = 0; // amount of tests run
+   
+
+  std::cout << "How many times to ping?: " << std::endl;
+  std::cin >> pingTimes;  
+
+   if(pingTimes == 1 || pingTimes < maxPingTimes)
    {
-       std::printf("Running %d test, please wait...", pingTimes); 
+       std::printf("Running %d tests, please be patient...", pingTimes); 
        while(testNum < pingTimes)
        {
            while(testNum < pingTimes)
@@ -116,41 +117,16 @@ void check_connection()
         std::cout << "Ping completed: " << testNum << std::endl;
       }
        }
-   }else if(pingTimes > 1)
-   {
-    std::printf("Running %d tests, please be patient...", pingTimes);
-
-   if(pingTimes > 0 && pingTimes < 10){
-      while(testNum < pingTimes)
-       { 
-        if( system("ping www.google.com") == 0)
-        {   
-            std::cout << " " << std::endl; 
-            std::cout << "Connection successful!" << std::endl;
-            std::cout << "--------------------------------------" << std::endl;
-            std::printf("Currently completing: %d, currently at:", pingTimes);
-            ++testNum;
-        }
-        else
-        {
-            std::cout << "Connection unsuccessful" << std::endl;
-        }
-        std::cout << "Ping completed: " << testNum << std::endl;
-      }
-   }
-   else if(pingTimes == 0)
-   {
-       std::cout << "No tests entered." << std::endl;
-   }
-   else if(pingTimes < 0)
-   {
-       std::cout << "pingTimes needs to be greater than 0." << std::endl;
-   }
-   else if (pingTimes > 10)
-   {
-	   std::cout << "Cannot have more than 10 tests done." << std::endl;
-   }
-   }
+    }
+    else if(pingTimes > maxPingTimes)
+    {
+        std::cout << "pingTimes must be less than 10" << std::endl;
+    }
+    else if(pingTimes == 0)
+    {
+        std::cout << "pingTimes cannot be set to 0" << std::endl;
+    }
+   
 }
 //-----------------------------------------------------------------------------
 void get_ram()
